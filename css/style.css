@@ -1,0 +1,21 @@
+.profile-img {
+    height: 100px;
+    width: 100px; /* Ensure the width is the same as the height for a perfect circle */
+    border-radius: 50%; /* This creates the circular shape */
+    /* Additional properties for aesthetics */
+    overflow: hidden; /* Ensures no overflow outside the circular shape */
+    border: 2px solid #fff; /* Optional: Adds a border around the image */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+}
+
+.classic-font {
+    font-family: 'Times New Roman', Times, serif; /* This is a classic font-family */
+    /* Additional styling if needed */
+}
+
+.backgroundPFP {
+    background-image: url('../images/background.png');
+    background-size: cover; /* This will ensure that the background covers the entire section */
+    background-position: center; /* This centers the image in the section */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
