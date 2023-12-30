@@ -1,21 +1,86 @@
 .profile-img {
     height: 100px;
-    width: 100px; /* Ensure the width is the same as the height for a perfect circle */
-    border-radius: 50%; /* This creates the circular shape */
+    width: 100px;
+    /* Ensure the width is the same as the height for a perfect circle */
+    border-radius: 50%;
+    /* This creates the circular shape */
     /* Additional properties for aesthetics */
-    overflow: hidden; /* Ensures no overflow outside the circular shape */
-    border: 2px solid #fff; /* Optional: Adds a border around the image */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+    overflow: hidden;
+    /* Ensures no overflow outside the circular shape */
+    border: 2px solid #fff;
+    /* Optional: Adds a border around the image */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Adds a subtle shadow for depth */
 }
 
 .classic-font {
-    font-family: 'Times New Roman', Times, serif; /* This is a classic font-family */
+    font-family: 'Times New Roman', Times, serif;
+    /* This is a classic font-family */
     /* Additional styling if needed */
 }
 
-.backgroundPFP {
+.genshinBackgroundPFP {
     background-image: url('../images/background.png');
-    background-size: cover; /* This will ensure that the background covers the entire section */
-    background-position: center; /* This centers the image in the section */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover;
+    /* This will ensure that the background covers the entire section */
+    background-position: center;
+    /* This centers the image in the section */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+.feature-icon {
+    border-radius: 50%;
+    /* Adjust this value to control the roundness */
+    /* Other existing styles */
+}
+
+.round-company-img {
+    border-radius: 50%;
+}
+
+.rectangle-company-img {
+    max-width: 350px;
+    /* Ensures the image is no wider than its container */
+    max-height: 200px;
+    /* Sets a maximum height for the image */
+    height: auto;
+    /* Maintains the aspect ratio of the image */
+    border-radius: 10px;
+    /* Optional: Applies slight rounding to corners */
+    display: block;
+    /* Ensures the image is a block-level element */
+    margin: 0 auto;
+    /* Centers the image horizontally within its container */
+}
+
+.gradient-background {
+    background: linear-gradient(135deg, #0a2948 0%, #204d64 33%, #2a5c70 66%, #3e7b8a 100%);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#footer * {
+    color: #ffffff;
+    /* This will apply the white text color to all elements within the footer */
 }
