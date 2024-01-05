@@ -100,3 +100,17 @@
     width: 90%;
     height: 90%;
 }
+
+.container-experience-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    /* Adjust as needed */
+}
+
+.container-experience-title h3,
+.container-experience-title p {
+    margin-bottom: 20px;
+    /* Adds space around the items. Adjust as needed */
+}
