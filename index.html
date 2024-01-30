@@ -32,9 +32,16 @@
             <!-- First Row -->
             <div class="row g-4 py-3">
                 <div class="feature col">
-                    <div
-                        class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-                        <img class="round-company-img" src="./images/asiacom-americas.png" alt="asiacom-americas">
+                    <div class="d-inline-flex align-items-center justify-content-center">
+                        <div
+                            class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                            <img class="round-company-img" src="./images/asiacom-americas.png" alt="asiacom-americas">
+                        </div>
+                        <button type="button" class="btn btn-primary"
+                            style="position: relative; top: 60px; margin-left: 3rem;"
+                            onclick="redirectToNewPage('./secondaryHTML/asiacomJourney.html')">
+                            Explore This Joiuney
+                        </button>
                     </div>
                     <div class="container-experience-title">
                         <h3 class="fs-2 text-body-emphasis">Junior Software Developer - Automation Script</h3>
@@ -372,6 +379,12 @@
             </footer>
         </div>
     </section>
+
+    <script>
+        function redirectToNewPage(newURL) {
+            window.location.href = newURL;
+        }
+    </script>
 </body>
 
 </html>
