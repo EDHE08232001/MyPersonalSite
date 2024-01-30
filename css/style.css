@@ -114,3 +114,33 @@
     margin-bottom: 20px;
     /* Adds space around the items. Adjust as needed */
 }
+
+.apple-style-button {
+    background-color: #e0e0e0;
+    /* Light gray for contrast against white background */
+    color: #007aff;
+    /* Apple blue for text */
+    padding: 10px 20px;
+    border-radius: 20px;
+    /* Rounded corners */
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: all 0.3s ease;
+    position: relative;
+    top: 60px;
+    margin-left: 3rem;
+}
+
+.apple-style-button:hover,
+.apple-style-button:focus {
+    background-color: #d0d0d0;
+    /* Slightly darker background on hover/focus */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    /* Slightly larger shadow on hover/focus */
+    outline: none;
+    /* Remove default focus outline */
+}
