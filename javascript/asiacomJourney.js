@@ -19,8 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.getElementById('big-title');
         const paragraph = document.getElementById('description');
 
-        title.textContent = "Photos On My Journey";
-        paragraph.textContent = "Shot with Google Pixel 6";
+        title.textContent = "Photos from My Journey";
+        paragraph.textContent = "Captured with Google Pixel 6";
+
     }
 
     presentationButton.addEventListener('click', () => {
