@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Edward He</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/asiacomJourney.css">
+
+    <style>
+        div>img {
+            border-radius: 5%;
+        }
+
+        #carousel>div {
+            border-radius: 5%;
+        }
+    </style>
+</head>
+
+<body class="background">
+    <section id="Asiacom-Journey">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div id="diaplaySection" class="col-10 col-sm-8 col-lg-6">
+                    <!--Presentation-->
+                    <div id="presentation">
+                        <img src="../images/presentation.png" class="d-block mx-lg-auto img-fluid"
+                            alt="Bootstrap Themes" width="800" height="600" loading="lazy">
+                    </div>
+                    <!--On Journey-->
+                    <div id="carousel" class="carousel slide" style="display: none; border-radius: 5%;">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../images/sky1.png" class="d-block w-100"
+                                    alt="A serene view from an airplane window, showcasing the golden glow of sunrise above a sea of clouds, marking the beginning of a new journey.">
+                                <div class="carousel-caption">
+                                    <h3>Sunrise Above the Clouds</h3>
+                                    <p>A serene view from an airplane window, marking the beginning of a new journey.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/sky2.png" class="d-block w-100"
+                                    alt="The canvas of the sky painted with strokes of warm and cool colors, reflecting the quiet transition from night to day.">
+                                <div class="carousel-caption">
+                                    <h3>Twilight Symphony</h3>
+                                    <p>The canvas of the sky painted with strokes of warm and cool colors.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/sky3.png" class="d-block w-100"
+                                    alt="A glimpse of heaven from above, where the clouds form a soft blanket, hiding the world below.">
+                                <div class="carousel-caption">
+                                    <h3>Heavenly Cloudscape</h3>
+                                    <p>A glimpse of heaven from above, where clouds form a soft blanket.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/airport.png" class="d-block w-100"
+                                    alt="The starting point of many adventures, the airport tarmac stands ready to guide travelers to their destinations.">
+                                <div class="carousel-caption">
+                                    <h3>Gateway to Adventures</h3>
+                                    <p>The airport tarmac: a starting point for many adventures.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <h1 id="big-title" class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+                        Unveiling My Internship Innovations
+                    </h1>
+                    <p id="description" class="lead">
+                        In this pivotal presentation, I'm thrilled to demonstrate the culmination of my internship
+                        experience: a groundbreaking report conversion automation script. Designed to streamline
+                        processes for the HR team, this script embodies my commitment to enhancing efficiency and
+                        accuracy in the workplace.
+                    </p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button id="on-journey" type="button" class="btn btn-outline-secondary btn-lg px-4">On
+                            Journey</button>
+                        <button id="presentation-button" type="button"
+                            class="btn btn-primary btn-lg px-4 me-md-2">Presentation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="../javascript/asiacomJourney.js"></script>
+</body>
+
+</html>

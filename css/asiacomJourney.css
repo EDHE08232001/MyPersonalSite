@@ -1,0 +1,6 @@
+.background {
+    width: auto;
+    height: auto;
+    background: radial-gradient(at bottom left, #ffd1dc, #40e0d0, #8a2be2);
+    background-attachment: fixed;
+}
