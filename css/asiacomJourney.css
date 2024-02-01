@@ -4,3 +4,24 @@
     background: radial-gradient(at bottom left, #ffd1dc, #40e0d0, #8a2be2);
     background-attachment: fixed;
 }
+
+/* Adjust the size of images */
+div>img,
+.carousel-item>img {
+    width: auto;
+    height: auto;
+}
+
+/* Adjust the size of the display section */
+#displaySection {
+    width: 70%;
+    /* Adjust this percentage based on desired width */
+}
+
+div>img {
+    border-radius: 5%;
+}
+
+#carousel>div {
+    border-radius: 5%;
+}
