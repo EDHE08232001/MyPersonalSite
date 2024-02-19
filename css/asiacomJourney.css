@@ -25,3 +25,31 @@ div>img {
 #carousel>div {
     border-radius: 5%;
 }
+
+.goBackToMain .nav-link {
+    color: aliceblue;
+    /* Text color */
+    background-color: #007aff;
+    /* iOS 7 default blue */
+    /* Subtle border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 5px 10px;
+    /* Padding for touch area */
+    text-decoration: none;
+    /* No underline */
+    font-weight: bold;
+    /* iOS typically uses bold text for buttons */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.goBackToMain .nav-link:hover,
+.goBackToMain .nav-link:focus {
+    background-color: #005ecb;
+    /* Slightly darker blue on hover/focus */
+    color: #fff;
+    /* White text on hover/focus for better readability */
+    text-decoration: none;
+    /* Ensuring no underline on hover/focus */
+}

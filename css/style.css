@@ -144,3 +144,12 @@
     outline: none;
     /* Remove default focus outline */
 }
+
+.bi-cloud {
+    /* Adjust the SVG icon size */
+    width: 40px;
+    /* Smaller than the container for padding */
+    height: 40px;
+    color: white;
+    /* Change the color if needed */
+}
