@@ -421,7 +421,7 @@
             <a href="./files/Edward_He_s_Resume.pdf" class="download-link" download="Edward_He_Resume.pdf">Download My
                 Resume</a>
 
-            <p class="copyright">© Edward He 🇨🇦</p>
+            <p id="My-Copyright" class="copyright">Placeholder</p>
         </footer>
     </section>
 
@@ -429,6 +429,9 @@
         function redirectToNewPage(newURL) {
             window.location.href = newURL;
         }
+        const currentDate = new Date().getFullYear();
+        const copyright = "© Edward He 🇨🇦 " + currentDate;
+        window.document.getElementById("My-Copyright").innerText = copyright;
     </script>
 </body>
 
