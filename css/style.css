@@ -153,3 +153,12 @@
     color: white;
     /* Change the color if needed */
 }
+
+.download-link {
+    text-decoration: none;
+    /* Removes the underline */
+    color: white;
+    /* Sets the default color, assuming white looks good on your blue background */
+    transition: color 0.3s ease-in-out;
+    /* Smooth transition for the color change */
+}
