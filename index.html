@@ -24,25 +24,32 @@
                 <ul class="text-start mx-auto"
                     style="max-width: 600px; color: #f8f9fa; list-style-type: none; padding: 0; padding-left: 100px;">
                     <li class="mb-2">
-                        <strong>MASc Admission:</strong> Admitted to MASc ECE (Applied AI), University of Ottawa (Jan 2026). 
+                        <strong>MASc Admission:</strong> Admitted to MASc ECE (Applied AI), University of Ottawa
+                        (Jan 2026).
                     </li>
                     <li class="mb-2">
-                        <strong>Graduate Funding:</strong> Awarded \$7,500 Admission Scholarship (3 terms), \$18,000 Research Support, \$12,000 TAship over 2 years.
+                        <strong>Graduate Funding:</strong> Awarded \$7,500 Admission Scholarship (3 terms), \$18,000
+                        Research Support, \$12,000 TAship over 2 years.
                     </li>
                     <li class="mb-2">
-                        <strong>Academic Distinction:</strong> Recognized on the Dean's Honour List for outstanding performance.
+                        <strong>Academic Distinction:</strong> Recognized on the Dean's Honour List for outstanding
+                        performance.
                     </li>
                     <li class="mb-2">
-                        <strong>Consistent Excellence:</strong> Maintained an impressive GPA of 80+ throughout my studies.
+                        <strong>Consistent Excellence:</strong> Maintained an impressive GPA of 80+ throughout my
+                        studies.
                     </li>
                     <li class="mb-2">
-                        <strong>Scholarship Recipient:</strong> Awarded a prestigious \$3,000 Admission Scholarship for academic merit.
+                        <strong>Scholarship Recipient:</strong> Awarded a prestigious \$3,000 Admission Scholarship for
+                        academic merit.
                     </li>
                     <li class="mb-2">
-                        <strong>First-Year Achievement:</strong> Earned a \$1,000 Merit Scholarship for demonstrating excellence in my initial year.
+                        <strong>First-Year Achievement:</strong> Earned a \$1,000 Merit Scholarship for demonstrating
+                        excellence in my initial year.
                     </li>
                     <li class="mb-2">
-                        <strong>Community Support:</strong> Honored with the \$1,000 Engineering Wives Association Ottawa Bursary for dedication and community involvement.
+                        <strong>Community Support:</strong> Honored with the \$1,000 Engineering Wives Association
+                        Ottawa Bursary for dedication and community involvement.
                     </li>
                 </ul>
             </div>
@@ -365,6 +372,73 @@
             <p id="My-Copyright" class="copyright">Placeholder</p>
         </footer>
     </section>
+
+    <!-- 🤖 Digital Edward Chatbot Section -->
+    <section id="chatbot">
+        <div class="position-fixed bottom-0 end-0 m-4" style="z-index: 1050;">
+            <!-- Toggle Button -->
+            <button class="btn btn-primary rounded-circle shadow" id="chatToggleBtn" onclick="toggleChat()"
+                style="width: 60px; height: 60px;">
+                💬
+            </button>
+
+            <!-- Chat Window -->
+            <div id="chatWindow" class="card shadow" style="width: 350px; display: none;">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <strong>Digital Edward</strong>
+                    <button class="btn btn-sm btn-light" onclick="toggleChat()">−</button>
+                </div>
+                <div class="card-body" id="chatbox" style="height: 200px; overflow-y: auto; font-size: 0.9rem;"></div>
+                <div class="card-footer p-2">
+                    <div class="input-group">
+                        <input type="text" id="chat-input" class="form-control"
+                            placeholder="Ask about Edward's experience...">
+                        <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💻 Chatbot JavaScript -->
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById("chatWindow");
+            const toggleBtn = document.getElementById("chatToggleBtn");
+            const isHidden = chatWindow.style.display === "none";
+            chatWindow.style.display = isHidden ? "block" : "none";
+            toggleBtn.innerHTML = isHidden ? "−" : "💬";
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById("chat-input");
+            const chatbox = document.getElementById("chatbox");
+            const message = input.value.trim();
+            if (!message) return;
+
+            chatbox.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+            input.value = "";
+
+            try {
+                const response = await fetch("https://digital-me-EDHE.replit.app/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                chatbox.innerHTML += `<div><strong>Digital Edward:</strong> ${data.reply}</div>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            } catch (err) {
+                chatbox.innerHTML += `<div class="text-danger">⚠️ Error contacting Digital Edward.</div>`;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("chat-input").addEventListener("keypress", function (e) {
+                if (e.key === "Enter") sendMessage();
+            });
+        });
+    </script>
 
     <script>
         function redirectToNewPage(newURL) {
