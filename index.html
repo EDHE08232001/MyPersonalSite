@@ -410,6 +410,18 @@
             toggleBtn.innerHTML = isHidden ? "−" : "💬";
         }
 
+        function formatMarkdown(text) {
+            return text
+                .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")  // Bold
+                .replace(/\*(.*?)\*/g, "<em>$1</em>")              // Italic
+                .replace(/`([^`]+)`/g, "<code>$1</code>")          // Inline code
+                .replace(/\n/g, "<br>")                            // New lines
+                .replace(/^(#{1,6})\s*(.*)$/gm, (_, h, title) => {
+                    const level = h.length;
+                    return `<h${level} class="mt-2 mb-1">${title}</h${level}>`;
+                });
+        }
+
         async function sendMessage() {
             const input = document.getElementById("chat-input");
             const chatbox = document.getElementById("chatbox");
@@ -426,7 +438,7 @@
                     body: JSON.stringify({ message })
                 });
                 const data = await response.json();
-                chatbox.innerHTML += `<div><strong>Digital Edward:</strong> ${data.reply}</div>`;
+                chatbox.innerHTML += `<div><strong>Digital Edward:</strong> <div class="mt-1">${formatMarkdown(data.reply)}</div></div>`;
                 chatbox.scrollTop = chatbox.scrollHeight;
             } catch (err) {
                 chatbox.innerHTML += `<div class="text-danger">⚠️ Error contacting Digital Edward.</div>`;
@@ -439,6 +451,7 @@
             });
         });
     </script>
+
 
     <script>
         function redirectToNewPage(newURL) {
