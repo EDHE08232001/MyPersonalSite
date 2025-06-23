@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/layout.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -410,18 +411,6 @@
             toggleBtn.innerHTML = isHidden ? "−" : "💬";
         }
 
-        function formatMarkdown(text) {
-            return text
-                .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")  // Bold
-                .replace(/\*(.*?)\*/g, "<em>$1</em>")              // Italic
-                .replace(/`([^`]+)`/g, "<code>$1</code>")          // Inline code
-                .replace(/\n/g, "<br>")                            // New lines
-                .replace(/^(#{1,6})\s*(.*)$/gm, (_, h, title) => {
-                    const level = h.length;
-                    return `<h${level} class="mt-2 mb-1">${title}</h${level}>`;
-                });
-        }
-
         async function sendMessage() {
             const input = document.getElementById("chat-input");
             const chatbox = document.getElementById("chatbox");
@@ -437,8 +426,10 @@
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ message })
                 });
+
                 const data = await response.json();
-                chatbox.innerHTML += `<div><strong>Digital Edward:</strong> <div class="mt-1">${formatMarkdown(data.reply)}</div></div>`;
+                const parsed = marked.parse(data.reply);
+                chatbox.innerHTML += `<div><strong>Digital Edward:</strong><div class="mt-1">${parsed}</div></div>`;
                 chatbox.scrollTop = chatbox.scrollHeight;
             } catch (err) {
                 chatbox.innerHTML += `<div class="text-danger">⚠️ Error contacting Digital Edward.</div>`;
@@ -451,6 +442,7 @@
             });
         });
     </script>
+
 
 
     <script>
